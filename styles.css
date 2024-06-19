@@ -2,35 +2,11 @@
   padding: 0;
   margin: 0;
 }
-body {
-  font-family: "Raleway", sans-serif;
-  color: #525252;
-}
-.container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
-.metronome {
-  border: 1px solid black;
-  display: flex;
-  flex-direction: column;
-  width: 300px;
-  height: 250px;
-  justify-content: space-between;
-}
-.bpm-display {
-  width: 100%;
-  text-align: center;
-  color: #fa545c;
-  font-weight: bold;
-}
-.bpm-display .tempo {
-  font-size: 4em;
-}
-.tempo-text {
-  font-size: 0.8em;
-  text-transform: uppercase;
-  text-align: center;
+
+.start-stop {
+  width: 0;
+  height: 0;
+  border-top: 40px solid transparent;
+  border-bottom: 40px solid transparent;
+  border-left: 60px solid black;
 }
