@@ -11,6 +11,12 @@ body {
   color: #080b17;
 }
 
+button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
 .container {
   display: flex;
   justify-content: center;
@@ -26,6 +32,36 @@ body {
   height: 417px;
   justify-content: space-between;
   padding: 1rem;
+}
+
+.bpm-display {
+  width: 100%;
+  text-align: center;
+  color: #38479f;
+  font-weight: bold;
+}
+
+.bpm-display .tempo {
+  font-size: 4em;
+  font-weight: bold;
+}
+
+.bpm-display .tempo-text {
+  font-size: 0.8em;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.tempo-settings {
+  display: flex;
+  justify-content: space-between;
+}
+
+.tempo-settings button {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1px solid #acadbc;
 }
 
 .start-stop {
