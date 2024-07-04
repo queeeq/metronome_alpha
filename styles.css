@@ -46,6 +46,10 @@ button {
   font-weight: bold;
 }
 
+.bpm-display .bpm {
+  font-size: 1.3em;
+}
+
 .bpm-display .tempo-text {
   font-size: 0.8em;
   text-transform: uppercase;
@@ -58,10 +62,21 @@ button {
 }
 
 .tempo-settings button {
-  width: 30px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   border: 1px solid #acadbc;
+  font-size: 30px;
+}
+
+.tempo-settings button:hover {
+  background-color: #38479f;
+  color: white;
+}
+
+.triangle {
+  display: flex;
+  justify-content: center;
 }
 
 .start-stop {
@@ -69,5 +84,22 @@ button {
   height: 0;
   border-top: 40px solid transparent;
   border-bottom: 40px solid transparent;
-  border-left: 60px solid black;
+  border-left: 60px solid #38479f;
+}
+
+/*.start-stop:hover {*/
+/*  background-color: #90d6da;*/
+/*}*/
+
+.measures {
+  display: flex;
+  justify-content: center;
+}
+
+.measures button {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 1px solid #acadbc;
+  text-align: center;
 }
