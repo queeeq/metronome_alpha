@@ -4,9 +4,10 @@ let measures = 4;
 
 const increaseTempoButton = document.querySelector(".increase-tempo");
 const decreaseTempoButton = document.querySelector(".decrease-tempo");
+const tempoDisplay = document.querySelector(".tempo");
+
 const addBeatsButton = document.querySelector(".add-beats");
 const subtractBeatsButton = document.querySelector(".subtract-beats");
-const tempoDisplay = document.querySelector(".tempo");
 const measuresDisplay = document.querySelector(".measure-count");
 
 // event listeners section
