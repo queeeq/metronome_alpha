@@ -25,7 +25,7 @@ button {
 }
 
 .metronome {
-  border: 1px solid black;
+  border: 1px solid #acadbc;
   display: flex;
   flex-direction: column;
   width: 500px;
@@ -74,14 +74,19 @@ button {
   color: white;
 }
 
+.decrease-tempo-content {
+  margin-top: -0.3rem;
+}
+
+/*.increase-tempo-content {*/
+/*  margin-bottom: -0.25rem;*/
+/*}*/
+
 hr {
   width: 22rem;
   height: 1px;
   border: 0 none;
-  margin-right: 10px;
-  margin-left: 10px;
-  margin-top: 24px;
-  margin-bottom: 10px;
+  margin: 24px 10px 10px;
   background-color: black;
 }
 
@@ -121,6 +126,10 @@ hr {
 .measures button:hover {
   background-color: #38479f;
   color: white;
+}
+
+.subtract-beats-content {
+  margin-top: -0.2rem;
 }
 
 .measure-count {
