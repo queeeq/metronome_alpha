@@ -78,10 +78,6 @@ button {
   margin-top: -0.3rem;
 }
 
-/*.increase-tempo-content {*/
-/*  margin-bottom: -0.25rem;*/
-/*}*/
-
 hr {
   width: 22rem;
   height: 1px;
@@ -102,10 +98,11 @@ hr {
   border-bottom: 40px solid transparent;
   border-left: 60px solid #38479f;
   margin-bottom: 20px;
+  background-color: transparent;
 }
 
 .start-stop:hover {
-  background-color: #90d6da;
+  border-left-color: #90d6da;
 }
 
 .measures {
