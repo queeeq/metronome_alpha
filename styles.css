@@ -79,12 +79,11 @@ button {
   background-color: #38479f;
   border-radius: 50%;
   cursor: pointer;
-  transition: background-color, border;
+  transition: background-color;
 }
 
 .slider-thumb:hover {
   background-color: #90d6da;
-  border: 0.5px solid black;
 }
 
 .tempo-settings {
