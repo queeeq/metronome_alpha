@@ -15,6 +15,7 @@ const measuresDisplay = document.querySelector(".measure-count");
 
 let tempo = 150;
 let measures = 4;
+let tempoTextString = "Moderate";
 
 // event listeners section
 
@@ -24,9 +25,7 @@ increaseTempoButton.addEventListener("click", () => {
     return;
   }
   tempo += 1;
-  tempoDisplay.textContent = tempo;
-  tempoSlider.value = tempo;
-  console.log(tempo);
+  updateMetronome();
 });
 
 decreaseTempoButton.addEventListener("click", () => {
@@ -34,27 +33,58 @@ decreaseTempoButton.addEventListener("click", () => {
     return;
   }
   tempo -= 1;
-  tempoDisplay.textContent = tempo;
-  tempoSlider.value = tempo;
-  console.log(tempo);
+  updateMetronome();
 });
 
 // slider handling
 tempoSlider.addEventListener("input", () => {
   tempo = +tempoSlider.value;
-  tempoDisplay.textContent = tempo;
-  tempoSlider.value = tempo;
+  updateMetronome();
 });
 
 // +/- measures buttons
 addBeatsButton.addEventListener("click", () => {
+  if (measures >= 12) {
+    return;
+  }
   measures += 1;
   measuresDisplay.textContent = measures;
   console.log(measures);
 });
 
 subtractBeatsButton.addEventListener("click", () => {
+  if (measures <= 1) {
+    return;
+  }
   measures -= 1;
   measuresDisplay.textContent = measures;
   console.log(measures);
 });
+
+function updateMetronome() {
+  tempoDisplay.textContent = tempo;
+  tempoSlider.value = tempo;
+  tempoText.textContent = tempoTextString;
+  if (tempo <= 40) {
+    tempoTextString = "Very Slow";
+  }
+  if (tempo > 40 && tempo < 80) {
+    tempoTextString = "Slow";
+  }
+  if (tempo >= 80 && tempo < 120) {
+    tempoTextString = "Walking pace";
+  }
+  if (tempo >= 120 && tempo < 160) {
+    tempoTextString = "Moderate";
+  }
+  if (tempo >= 160 && tempo < 200) {
+    tempoTextString = "Fast";
+  }
+  if (tempo >= 200 && tempo < 240) {
+    tempoTextString = "Very Fast";
+  }
+  if (tempo >= 240 && tempo <= 280) {
+    tempoTextString = "Extremely Fast";
+  }
+  console.log(tempo);
+}
