@@ -12,21 +12,15 @@
     <div class="container">
       <div class="metronome">
         <div class="bpm-display">
-          <span class="tempo">120</span>
+          <span class="tempo">150</span>
           <span class="bpm">BPM</span>
-          <div class="tempo-text">Very slow</div>
+          <div class="tempo-text">Moderate</div>
         </div>
         <div class="tempo-settings">
           <button class="decrease-tempo">
             <div class="decrease-tempo-content">-</div>
           </button>
-
-          <!--         slider container -->
-          <div class="slider-container">
-            <hr class="slider" />
-            <div class="slider-thumb"></div>
-          </div>
-
+          <input type="range" min="20" max="280" step="1" class="slider" />
           <button class="increase-tempo">
             <div class="increase-tempo-content">+</div>
           </button>
