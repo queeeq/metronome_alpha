@@ -61,30 +61,44 @@ subtractBeatsButton.addEventListener("click", () => {
   console.log(measures);
 });
 
+// descriptions according to BPM
 function updateMetronome() {
+  if (tempo >= 20 && tempo <= 45) {
+    tempoTextString = "Grave";
+  }
+  if (tempo > 45 && tempo <= 60) {
+    tempoTextString = "Lento";
+  }
+  if (tempo > 60 && tempo <= 66) {
+    tempoTextString = "Larghetto";
+  }
+  if (tempo > 66 && tempo <= 76) {
+    tempoTextString = "Adagio";
+  }
+  if (tempo > 76 && tempo <= 108) {
+    tempoTextString = "Andante";
+  }
+  if (tempo > 108 && tempo <= 120) {
+    tempoTextString = "Moderato";
+  }
+  if (tempo > 120 && tempo <= 156) {
+    tempoTextString = "Allegro";
+  }
+  if (tempo > 156 && tempo <= 176) {
+    tempoTextString = "Vivace";
+  }
+  if (tempo > 176 && tempo <= 200) {
+    tempoTextString = "Presto";
+  }
+  if (tempo > 200 && tempo <= 280) {
+    tempoTextString = "Prestissimo";
+  }
   tempoDisplay.textContent = tempo;
   tempoSlider.value = tempo;
   tempoText.textContent = tempoTextString;
-  if (tempo <= 40) {
-    tempoTextString = "Very Slow";
-  }
-  if (tempo > 40 && tempo < 80) {
-    tempoTextString = "Slow";
-  }
-  if (tempo >= 80 && tempo < 120) {
-    tempoTextString = "Walking pace";
-  }
-  if (tempo >= 120 && tempo < 160) {
-    tempoTextString = "Moderate";
-  }
-  if (tempo >= 160 && tempo < 200) {
-    tempoTextString = "Fast";
-  }
-  if (tempo >= 200 && tempo < 240) {
-    tempoTextString = "Very Fast";
-  }
-  if (tempo >= 240 && tempo <= 280) {
-    tempoTextString = "Extremely Fast";
-  }
   console.log(tempo);
 }
+
+// startStopButton.addEventListener("click", () => {
+//   setTimeout();
+// });

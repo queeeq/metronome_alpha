@@ -99,7 +99,7 @@ button {
 }
 
 .decrease-tempo-content {
-  margin-top: -0.3rem;
+  margin-top: -7px;
 }
 
 .triangle {
@@ -142,7 +142,11 @@ button {
 }
 
 .subtract-beats-content {
-  margin-top: -0.2rem;
+  margin-top: -4px;
+}
+
+.add-beats-content {
+  margin-top: -1px;
 }
 
 .measure-count {
