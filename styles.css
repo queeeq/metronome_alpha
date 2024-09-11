@@ -121,6 +121,21 @@ button {
   border-left-color: #90d6da;
 }
 
+.start-stop.stop {
+  width: auto;
+  height: auto;
+  border: none;
+  background-color: transparent;
+}
+
+.start-stop svg {
+  display: none;
+}
+
+.start-stop.stop svg {
+  display: block;
+}
+
 .measures {
   display: flex;
   justify-content: center;

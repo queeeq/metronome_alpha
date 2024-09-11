@@ -99,6 +99,30 @@ function updateMetronome() {
   console.log(tempo);
 }
 
-// startStopButton.addEventListener("click", () => {
-//   setTimeout();
-// });
+// start/stop button handling
+let isPlaying = false;
+let interval;
+
+startStopButton.addEventListener("click", () => {
+  if (!isPlaying) {
+    interval = setInterval(() => {
+      console.log("click");
+    }, 1000);
+
+    startStopButton.classList.add("stop");
+    startStopButton.innerHTML = `
+      <svg xmlns="http://www.w3.org/2000/svg" height="80" viewBox="0 96 960 960" width="60" fill="#38479f">
+        <path d="M560 816V336h160v480H560zm-320 0V336h160v480H240z"/>
+      </svg>
+    `;
+
+    isPlaying = true;
+  } else {
+    clearInterval(interval);
+
+    startStopButton.classList.remove("stop");
+    startStopButton.innerHTML = "";
+
+    isPlaying = false;
+  }
+});
