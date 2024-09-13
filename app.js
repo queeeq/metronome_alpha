@@ -101,24 +101,32 @@ function updateMetronome() {
 
 // start/stop button handling
 let isPlaying = false;
-let interval;
+let timeout;
+
+function playMetronome() {
+  console.log("click");
+  timeout = setTimeout(playMetronome, 60000 / tempo);
+}
 
 startStopButton.addEventListener("click", () => {
   if (!isPlaying) {
-    interval = setInterval(() => {
-      console.log("click");
-    }, 1000);
+    playMetronome();
 
     startStopButton.classList.add("stop");
-    startStopButton.innerHTML = `
-      <svg xmlns="http://www.w3.org/2000/svg" height="80" viewBox="0 96 960 960" width="60" fill="#38479f">
-        <path d="M560 816V336h160v480H560zm-320 0V336h160v480H240z"/>
-      </svg>
-    `;
+    startStopButton.innerHTML =
+      "<svg\n" +
+      '              xmlns="http://www.w3.org/2000/svg"\n' +
+      '              height="80"\n' +
+      '              viewBox="0 96 960 960"\n' +
+      '              width="60"\n' +
+      '              fill="#38479f"\n' +
+      "            >\n" +
+      '              <path d="M560 816V336h160v480H560zm-320 0V336h160v480H240z" />\n' +
+      "            </svg>";
 
     isPlaying = true;
   } else {
-    clearInterval(interval);
+    clearTimeout(timeout);
 
     startStopButton.classList.remove("stop");
     startStopButton.innerHTML = "";
