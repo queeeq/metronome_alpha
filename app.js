@@ -103,34 +103,24 @@ function updateMetronome() {
 let isPlaying = false;
 let timeout;
 
+let lastClick = performance.now();
 function playMetronome() {
-  console.log("click");
+  const now = performance.now();
+  const expected = 60000 / tempo;
+  const actual = now - lastClick;
+  const diff = new Intl.NumberFormat("en-US", { signDisplay: "exceptZero" }).format(actual - expected);
+  console.log("click", { expected, actual, diff });
+  lastClick = now;
   timeout = setTimeout(playMetronome, 60000 / tempo);
 }
 
 startStopButton.addEventListener("click", () => {
+  startStopButton.classList.toggle("stopped");
+  isPlaying = !isPlaying;
+
   if (!isPlaying) {
     playMetronome();
-
-    startStopButton.classList.add("stop");
-    startStopButton.innerHTML =
-      "<svg\n" +
-      '              xmlns="http://www.w3.org/2000/svg"\n' +
-      '              height="80"\n' +
-      '              viewBox="0 96 960 960"\n' +
-      '              width="60"\n' +
-      '              fill="#38479f"\n' +
-      "            >\n" +
-      '              <path d="M560 816V336h160v480H560zm-320 0V336h160v480H240z" />\n' +
-      "            </svg>";
-
-    isPlaying = true;
   } else {
     clearTimeout(timeout);
-
-    startStopButton.classList.remove("stop");
-    startStopButton.innerHTML = "";
-
-    isPlaying = false;
   }
 });
