@@ -102,37 +102,28 @@ button {
   margin-top: -7px;
 }
 
-.triangle {
-  display: flex;
-  justify-content: center;
-}
+/* Start/stop button handling */
 
 .start-stop {
-  width: 0;
-  height: 0;
-  border-top: 40px solid transparent;
-  border-bottom: 40px solid transparent;
-  border-left: 60px solid #38479f;
-  margin-bottom: 20px;
   background-color: transparent;
-}
-
-.start-stop:hover {
-  border-left-color: #90d6da;
-}
-
-.start-stop.stop {
-  width: auto;
-  height: auto;
   border: none;
-  background-color: transparent;
+  cursor: pointer;
 }
 
-.start-stop svg {
+.start,
+.stop {
   display: none;
 }
 
-.start-stop.stop svg {
+.start-stop.active .start {
+  display: none;
+}
+
+.start-stop.active .stop {
+  display: block;
+}
+
+.start-stop .start {
   display: block;
 }
 
