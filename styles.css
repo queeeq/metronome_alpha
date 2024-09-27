@@ -104,15 +104,28 @@ button {
 
 /* Start/stop button handling */
 
+.start-stop-container {
+  display: flex;
+  justify-content: center;
+}
+
 .start-stop {
   background-color: transparent;
   border: none;
   cursor: pointer;
+  width: 100px;
+  height: 100px;
+  position: relative;
 }
 
 .start,
 .stop {
-  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
 }
 
 .start-stop.active .start {
@@ -125,6 +138,10 @@ button {
 
 .start-stop .start {
   display: block;
+}
+
+.start-stop .stop {
+  display: none;
 }
 
 .measures {
