@@ -102,22 +102,20 @@ function updateMetronome() {
 // Start/stop handling
 let isPlaying = false;
 let timeout;
-let startTime;
-let interval;
+let lastClick = performance.now();
 
 function playMetronome() {
   const now = performance.now();
-  let cyclesMissed = Math.floor((now - startTime) / interval);
+  const expected = 60000 / tempo;
+  const actual = now - lastClick;
+  const diff = new Intl.NumberFormat("en-US", {
+    signDisplay: "exceptZero",
+  }).format(actual - expected);
+  console.log("click", { expected, actual, diff });
 
-  lastClick = startTime + cyclesMissed * interval;
+  lastClick = now;
 
-  console.log("click", {
-    expected: interval,
-    actual: now - lastClick - interval,
-    diff: now - lastClick,
-  });
-
-  timeout = setTimeout(playMetronome, interval - (now - lastClick));
+  timeout = setTimeout(playMetronome, 60000 / tempo);
 }
 
 startStopButton.addEventListener("click", () => {
@@ -125,8 +123,6 @@ startStopButton.addEventListener("click", () => {
   isPlaying = !isPlaying;
 
   if (isPlaying) {
-    startTime = performance.now();
-    interval = 60000 / tempo;
     playMetronome();
   } else {
     clearTimeout(timeout);
