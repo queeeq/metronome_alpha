@@ -54,6 +54,23 @@ button {
   font-size: 0.8em;
   text-transform: uppercase;
   text-align: center;
+  margin-bottom: 10px;
+}
+
+.signal-indicator {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+}
+
+.circle {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: transparent;
+  border: 1px solid #38479f;
+  margin: 0 10px;
 }
 
 .slider {
