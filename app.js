@@ -1,5 +1,15 @@
 // variables
 
+const AccentClick = new Howl({
+  src: ["clicks/AccentClick.mp3"],
+});
+AccentClick.play();
+
+const Regularclick = new Howl({
+  src: ["clicks/RegularClick.mp3"],
+});
+Regularclick.play();
+
 const tempoDisplay = document.querySelector(".tempo");
 const tempoText = document.querySelector(".tempo-text");
 
@@ -114,6 +124,8 @@ function playMetronome() {
   console.log("click", { expected, actual, diff });
 
   lastClick = now;
+
+  Regularclick.play();
 
   timeout = setTimeout(playMetronome, 60000 / tempo);
 }
