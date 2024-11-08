@@ -2,13 +2,13 @@
 
 const AccentClick = new Howl({
   src: ["clicks/AccentClick.mp3"],
+  html5: true,
 });
-AccentClick.play();
 
-const Regularclick = new Howl({
+const RegularClick = new Howl({
   src: ["clicks/RegularClick.mp3"],
+  html5: true,
 });
-Regularclick.play();
 
 const tempoDisplay = document.querySelector(".tempo");
 const tempoText = document.querySelector(".tempo-text");
@@ -116,6 +116,7 @@ let lastClick = performance.now();
 
 function playMetronome() {
   const now = performance.now();
+  RegularClick.play();
   const expected = 60000 / tempo;
   const actual = now - lastClick;
   const diff = new Intl.NumberFormat("en-US", {
@@ -124,8 +125,6 @@ function playMetronome() {
   console.log("click", { expected, actual, diff });
 
   lastClick = now;
-
-  Regularclick.play();
 
   timeout = setTimeout(playMetronome, 60000 / tempo);
 }

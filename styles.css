@@ -25,7 +25,6 @@ button {
 }
 
 .metronome {
-  border: 1px solid #acadbc;
   display: flex;
   flex-direction: column;
   width: 500px;
