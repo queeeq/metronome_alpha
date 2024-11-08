@@ -64,19 +64,23 @@ button {
 }
 
 .circle {
-  width: 15px;
-  height: 15px;
+  width: 13px;
+  height: 13px;
+  margin: 0 8px;
   border-radius: 50%;
-  background-color: transparent;
-  border: 1px solid #38479f;
-  margin: 0 10px;
+  background-color: #ccc;
+  transition: background-color 0.1s ease;
+}
+
+.circle.active {
+  background-color: #3ebb45;
 }
 
 .slider {
   -webkit-appearance: none;
   margin-top: 25px;
   width: 75%;
-  height: 0.5px;
+  height: 1px;
   border: 0 none;
   background-color: black;
 }

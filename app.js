@@ -10,6 +10,8 @@ const RegularClick = new Howl({
   html5: true,
 });
 
+const circles = document.querySelectorAll(".circle");
+
 const tempoDisplay = document.querySelector(".tempo");
 const tempoText = document.querySelector(".tempo-text");
 
@@ -113,6 +115,7 @@ function updateMetronome() {
 let isPlaying = false;
 let timeout;
 let lastClick = performance.now();
+let circleIndex = 0;
 
 function playMetronome() {
   const now = performance.now();
@@ -123,6 +126,11 @@ function playMetronome() {
     signDisplay: "exceptZero",
   }).format(actual - expected);
   console.log("click", { expected, actual, diff });
+
+  circles.forEach((circle) => circle.classList.remove("active"));
+  circles[circleIndex].classList.add("active");
+
+  circleIndex = (circleIndex + 1) % circles.length;
 
   lastClick = now;
 
